@@ -1,0 +1,50 @@
+/home/dave/StudioProjects/allotment-lab/app/src/main/obj/local/mips64/objs/starwisp-core/engine/text_primitive.o: \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/text_primitive.cpp \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/text_primitive.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/core/fixed.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/primitive.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/importgl.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/fixed.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/list.h \
+ /home/dave/opt/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stdlib.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/types.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/fixed.h \
+ /home/dave/opt/android-ndk-r12b/sources/cxx-stl/stlport/stlport/math.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/list.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/vec3.h \
+ /home/dave/opt/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stdio.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/mat44.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/vec3.h \
+ /home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/pdata.h
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/text_primitive.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/core/fixed.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/primitive.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/importgl.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/fixed.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/list.h:
+
+/home/dave/opt/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stdlib.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/types.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/fixed.h:
+
+/home/dave/opt/android-ndk-r12b/sources/cxx-stl/stlport/stlport/math.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/list.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/vec3.h:
+
+/home/dave/opt/android-ndk-r12b/sources/cxx-stl/stlport/stlport/stdio.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/mat44.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/vec3.h:
+
+/home/dave/StudioProjects/allotment-lab/app/src/main/jni/engine/../core/pdata.h:

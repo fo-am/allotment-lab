@@ -1,0 +1,39 @@
+;; -*- mode: scheme; -*-
+;; Farm Crap App Pro Copyright (C) 2016 FoAM Kernow
+;;
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU Affero General Public License as
+;; published by the Free Software Foundation, either version 3 of the
+;; License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU Affero General Public License for more details.
+;;
+;; You should have received a copy of the GNU Affero General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+(define i18n-text
+  (list
+   (list 'title (list "Becky's allotment"))
+
+   (list 'soil-texture (list "Soil texture"))
+   (list 'soil-texture-but (list "Sandy loam"))
+   (list 'soil-ph (list "Soil pH"))
+   (list 'soil-ph-but (list "Slightly acid"))
+   (list 'units (list "Choose units"))
+   (list 'units-but (list "Metric"))
+   (list 'rainfall (list "Rainfall"))
+   (list 'rainfall-but (list "Low"))
+
+   (list 'compost-lab (list "Go to my compost lab"))
+   (list 'soil-lab (list "Go to my soil lab"))
+
+   (list 'recommended-crops (list "Recommended crops for your soil type"))
+   (list 'recommended-crops-text (list "Roots - carrots, parsnips, betroot, fennel, celery, parsley. Alliums - garlic, onion, leeks, shallots, chives."))
+   (list 'todo (list "Things to do"))
+   (list 'todo-text (list "Plant garlic bulbs now for havesting in summer."))
+ 
+
+   ))

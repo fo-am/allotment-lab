@@ -1,0 +1,9 @@
+TESTING FILTER URI CHARS 
+1234 
+1234 
+1234 
+1234 
+dblite.scm 
+choosing default [ (default 77) ] for three 
+choosing default [ (default 39) ] for spring 
+starwisp.scm 

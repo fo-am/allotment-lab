@@ -1,0 +1,38 @@
+
+(define (csv-titles db table entity-type)
+  (foldl
+   (lambda (kt r)
+     (if (equal? r "") (string-append "\"" (ktv-key kt) "\"")
+         (string-append r ", \"" (ktv-key kt) "\"")))
+   "id "
+   (get-attribute-ids/types db table entity-type)))
+
+(define (csv db table entity-type)
+  (let ((s (db-select
+         db (string-append
+             "select entity_id, unique_id from "
+             table "_entity where entity_type = ?") entity-type)))
+    (msg "CSV ------------------------------>" entity-type)
+    (if (null? s)
+	;; nothing here, just return titles
+	(csv-titles db table entity-type)
+	(foldl
+	 (lambda (res r)
+	   (let ((entity (get-entity-for-csv db table (vector-ref res 0))))
+	     (string-append
+	      r "\n"
+	      (foldl
+	       (lambda (ktv r)
+		 (cond
+		  ((equal? (ktv-key ktv) "unique_id") r)
+		  ((null? (ktv-value ktv))
+		   (msg "value not found in csv for " (ktv-key ktv))
+		   (string-append r ", NULL"))
+		  ;; dereferences lists of ids
+		  (else
+		   (string-append r ", \"" (stringify-value-url ktv) "\""))))
+	       (vector-ref res 1) ;; unique_id
+	       entity))))
+	 (csv-titles db table entity-type)
+	 (cdr s)))))
+
