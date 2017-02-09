@@ -22,7 +22,7 @@
 (define button-text-size 30)
 (define normal-text-size 20)
 (define small-text-size 15)
-(define margin-size 10)
+(define margin-size 0)
 (define list-colour (list 127 255 127 50))
 
 (define (mtext-lookup id)
@@ -79,7 +79,7 @@
 (define (vert-colour col . l)
   (linear-layout
    0 'vertical
-   (layout 'fill-parent 'wrap-content 1 'centre margin-size)
+   (layout 'fill-parent 'wrap-content 1 'centre 5)
    col
    l))
 
@@ -126,6 +126,12 @@
   (text-view (symbol->id id)
              (mtext-lookup id)
              normal-text-size (layout 'wrap-content 'wrap-content -1 'centre 0)))
+
+(define (mtext-margin id margin)
+  (text-view (symbol->id id)
+	     (mtext-lookup id)
+	     normal-text-size 
+	     (layout 'wrap-content 'wrap-content -1 'centre margin)))
 
 (define (mtext-fixed w id)
   (text-view (symbol->id id)

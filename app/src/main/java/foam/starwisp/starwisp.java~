@@ -64,7 +64,7 @@ public class starwisp extends StarwispActivity
 {
     static {
         // register all activities here
-        ActivityManager.RegisterActivity("splash",starwisp.class);
+        //ActivityManager.RegisterActivity("splash",starwisp.class);
         ActivityManager.RegisterActivity("main",MainActivity.class);
         ActivityManager.RegisterActivity("calc",CalcActivity.class);
         ActivityManager.RegisterActivity("newfield",NewFieldActivity.class);
@@ -108,7 +108,7 @@ public class starwisp extends StarwispActivity
         m_Scheme.Load("interface.scm");
 
         m_Builder = new StarwispBuilder(m_Scheme);
-        m_Name = "splash";
+        m_Name = "main";
 
         // tell scheme the date
         final Calendar c = Calendar.getInstance();

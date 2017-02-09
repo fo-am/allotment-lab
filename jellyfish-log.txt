@@ -4,6 +4,115 @@ TESTING FILTER URI CHARS
 1234 
 1234 
 dblite.scm 
-choosing default [ (default 77) ] for three 
-choosing default [ (default 39) ] for spring 
 starwisp.scm 
+======= stack follows ======
+-------- frame 8 -------
+args: (centre 0 ) 
+code: ()
+-------- frame 7 -------
+args: (#<CLOSURE> ) 
+code: ()
+-------- frame 6 -------
+args: ((text-view 74 To improve your compost 20 (layout wrap-content wrap-content -1 centre 0 ) ) (button 73 ratio-but2 not translated 30 (layout fill-parent wrap-content -1 centre 5 ) #<CLOSURE> ) (text-view 72 bin-ratio2 not translated 20 (layout wrap-content wrap-content -1 centre 0 ) ) (button 71 300 30 (layout fill-parent wrap-content -1 centre 5 ) #<CLOSURE> ) (text-view 70 Current approximate Carbon:Nitrogen ratio of your compost 20 (layout wrap-content wrap-content -1 centre 0 ) ) (text-view 69 The idea Carbon:Nitrogen ratio of compost is 30. About two thirds of Carbon is lost as Carbon Dioxide through the composting process. 20 (layout wrap-content wrap-content -1 centre 20 ) ) (button 68 Add to compost 30 (layout fill-parent wrap-content -1 centre 5 ) #<CLOSURE> ) (text-view 67 Left bin 30 (layout fill-parent wrap-content -1 centre 5 ) ) #<CLOSURE> ) 
+code: ((mbutton (quote back ) (lambda () ) ) ) 
+-------- frame 5 -------
+args: (#<CLOSURE> ) 
+code: ()
+-------- frame 4 -------
+args: ((layout fill-parent wrap-content 0.75 centre 0 ) 0 #<CLOSURE> ) 
+code: ()
+-------- frame 3 -------
+args: (newfield #<CLOSURE> ) 
+code: ((lambda (activity arg ) (activity-layout activity ) ) (lambda (activity arg ) (list ) ) (lambda (activity ) (quote () ) ) (lambda (activity ) (quote () ) ) (lambda (activity ) (quote () ) ) (lambda (activity ) (quote () ) ) (lambda (activity requestcode resultcode ) (quote () ) ) ) 
+-------- frame 2 -------
+args: ((fieldcalc (scroll-view-vert 0 ) #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> ) (calc (scroll-view-vert 0 ) #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> ) (main (scroll-view-vert 0 ) #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> ) (splash (scroll-view-vert 0 ) #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> #<CLOSURE> ) #<CLOSURE> ) 
+code: ((activity field (scroll-view-vert 0 ) (lambda ) (lambda ) (lambda ) (lambda ) (lambda ) (lambda ) (lambda ) ) (activity fieldhistory (scroll-view-vert 0 ) (lambda ) (lambda ) (lambda ) (lambda ) (lambda ) (lambda ) (lambda ) ) ) 
+-------- frame 1 -------
+args: ()
+code: ()
+-------- frame 0 -------
+args: ()
+code: ()
+Error: (<unknown> : 404) eval: unbound variable:
+ bin-info 
+======= stack follows ======
+-------- frame 7 -------
+args: (#<car PROCEDURE 71> 0 ) 
+code: ()
+-------- frame 6 -------
+args: (#<CLOSURE> ) 
+code: ()
+-------- frame 5 -------
+args: (#<CLOSURE> ) 
+code: (name ) 
+-------- frame 4 -------
+args: ()
+code: (((equal? name ) (car l ) ) (else (activity-list-find name ) ) ) 
+-------- frame 3 -------
+args: ((() (top-callback type activity-name activity args ) ) ) 
+code: ()
+-------- frame 2 -------
+args: ((() (prof-end "activity-callback" ) r ) ) 
+code: ()
+-------- frame 1 -------
+args: ()
+code: ()
+-------- frame 0 -------
+args: ()
+code: ()
+Error: (<unknown> : 1) car: argument 1 must be: pair
+ 
+======= stack follows ======
+-------- frame 7 -------
+args: (#<car PROCEDURE 71> 0 ) 
+code: ()
+-------- frame 6 -------
+args: (#<CLOSURE> ) 
+code: ()
+-------- frame 5 -------
+args: (#<CLOSURE> ) 
+code: (name ) 
+-------- frame 4 -------
+args: ()
+code: (((equal? name ) (car l ) ) (else (activity-list-find name ) ) ) 
+-------- frame 3 -------
+args: ((() (top-callback type activity-name activity args ) ) ) 
+code: ()
+-------- frame 2 -------
+args: ((() (prof-end "activity-callback" ) r ) ) 
+code: ()
+-------- frame 1 -------
+args: ()
+code: ()
+-------- frame 0 -------
+args: ()
+code: ()
+Error: (<unknown> : 1) car: argument 1 must be: pair
+ 
+======= stack follows ======
+-------- frame 7 -------
+args: (#<car PROCEDURE 71> 0 ) 
+code: ()
+-------- frame 6 -------
+args: (#<CLOSURE> ) 
+code: ()
+-------- frame 5 -------
+args: (#<CLOSURE> ) 
+code: (name ) 
+-------- frame 4 -------
+args: ()
+code: (((equal? name ) (car l ) ) (else (activity-list-find name ) ) ) 
+-------- frame 3 -------
+args: ((() (top-callback type activity-name activity args ) ) ) 
+code: ()
+-------- frame 2 -------
+args: ((() (prof-end "activity-callback" ) r ) ) 
+code: ()
+-------- frame 1 -------
+args: ()
+code: ()
+-------- frame 0 -------
+args: ()
+code: ()
+Error: (<unknown> : 1) car: argument 1 must be: pair
+ 

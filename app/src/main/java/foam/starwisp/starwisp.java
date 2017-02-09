@@ -64,7 +64,7 @@ public class starwisp extends StarwispActivity
 {
     static {
         // register all activities here
-        //ActivityManager.RegisterActivity("splash",starwisp.class);
+        ActivityManager.RegisterActivity("splash",starwisp.class);
         ActivityManager.RegisterActivity("main",MainActivity.class);
         ActivityManager.RegisterActivity("calc",CalcActivity.class);
         ActivityManager.RegisterActivity("newfield",NewFieldActivity.class);
@@ -84,7 +84,7 @@ public class starwisp extends StarwispActivity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        String dirname = "farmcrapapppro/";
+        String dirname = "allotment-lab/";
         m_AppDir = "/sdcard/"+dirname;
         File appdir = new File(m_AppDir);
         appdir.mkdirs();
@@ -108,7 +108,7 @@ public class starwisp extends StarwispActivity
         m_Scheme.Load("interface.scm");
 
         m_Builder = new StarwispBuilder(m_Scheme);
-        m_Name = "main";
+        m_Name = "splash";
 
         // tell scheme the date
         final Calendar c = Calendar.getInstance();
@@ -116,7 +116,7 @@ public class starwisp extends StarwispActivity
         int month = c.get(Calendar.MONTH)+1;
         int year = c.get(Calendar.YEAR);
         int timezone_offset_mins = (c.get(Calendar.ZONE_OFFSET) + c.get(Calendar.DST_OFFSET)) / 60000;
-
+ 
         String version = "Version not found";
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -143,14 +143,6 @@ public class starwisp extends StarwispActivity
         // pass in a bunch of useful stuff
         DeclareSensors();
 
-        m_Scheme.Load("decision.scm");
-        m_Scheme.Load("manure.scm");
-        m_Scheme.Load("soil-nutrients.scm");
-        m_Scheme.Load("crop-requirements.scm");
-        m_Scheme.Load("images.scm");
-        m_Scheme.Load("calc-core.scm");
-        m_Scheme.Load("geo.scm");
-        m_Scheme.Load("crap-app.scm");
         m_Scheme.Load("translations.scm");
 
         // pass in a bunch of useful stuff

@@ -615,7 +615,7 @@ public class StarwispBuilder
                 v.setText(Html.fromHtml(arr.getString(2)),BufferType.SPANNABLE);
                 v.setTextSize(arr.getInt(3));
                 v.setLayoutParams(BuildLayoutParams(arr.getJSONArray(4)));
-                v.setLinkTextColor(0xffffffaa);
+                v.setLinkTextColor(0xff00aa00);
 
                 // uncomment all this to get hyperlinks to work in text...
                 // should make this an option of course
