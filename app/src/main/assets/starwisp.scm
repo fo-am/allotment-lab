@@ -27,6 +27,14 @@
 (define compost-image-height 300)
 
 (define (infotext id)
+  (vert-colour 
+   info-col
+   (text-view (symbol->id id)
+	      (mtext-lookup id)
+	      large-text-size 
+	      (layout 'wrap-content 'wrap-content -1 'centre 20))))
+
+(define (infotext-robin id)
   (linear-layout
    0 'vertical
    (layout 'fill-parent 'wrap-content -1 'centre 0)
@@ -41,6 +49,23 @@
     (image-view 0 "speech" (layout 'fill-parent 'wrap-content -1 'centre 0))
     (image-view (make-id "robin") "robin_1" 
 		(layout 200 'wrap-content 1 'right 
+			'(0 -80 0 0))))))
+
+(define (infotext-forg id)
+  (linear-layout
+   0 'vertical
+   (layout 'fill-parent 'wrap-content -1 'centre 0)
+   '(0 0 0 0)
+   (list
+    (vert-colour 
+     info-col
+     (text-view (symbol->id id)
+		(mtext-lookup id)
+		large-text-size 
+		(layout 'wrap-content 'wrap-content -1 'centre 20)))
+    (image-view 0 "speech2" (layout 'fill-parent 'wrap-content -1 'centre 0))
+    (image-view (make-id "forg") "forg_0" 
+		(layout 200 'wrap-content 1 'left 
 			'(0 -80 0 0))))))
 
 (define (quick-fragment name widgets)
@@ -389,9 +414,9 @@
       (mbutton 'compost-lab (lambda () (list (start-activity "fieldcalc" 0 ""))))
 
       (mtext 'recommended-crops)
-      (infotext 'recommended-crops-text)
+      (infotext-robin 'recommended-crops-text)
       (mtext 'todo)
-      (infotext 'todo-text)
+      (infotext-forg 'todo-text)
       )))
    (lambda (activity arg)
      (activity-layout activity))
@@ -442,6 +467,9 @@
       (mtitle 'compost-title)
       (mtext-margin 'compost-text 20)
       (mbutton 'new-bin (lambda () '()))
+      (image-view (make-id "forg") "forg_0" 
+		  (layout 200 'wrap-content 1 'left 
+			  '(0 -80 0 0)))
       (spacer 10)
       (mbutton 'left-bin (lambda () (list (start-activity "newfield" 1 ""))))
       (mbutton 'middle-bin (lambda () (list (start-activity "newfield" 1 ""))))
@@ -453,6 +481,9 @@
       (mbutton 'compost-maintenance (lambda () '()))
       (mbutton 'compost-using (lambda () '()))
       (spacer 10)
+      (image-view (make-id "robin") "robin_1" 
+		  (layout 200 'wrap-content 1 'right 
+			  '(0 -80 0 0)))
       (mbutton 'back (lambda () (list (finish-activity 1))))
       
       )))
@@ -489,7 +520,7 @@
       (mtext 'bin-ratio2)
       (infotext 'ratio-but2)
       (mtext 'bin-tip)
-      (infotext 'bin-info)
+      (infotext-forg 'bin-info)
       (mbutton 'back (lambda () (list (finish-activity 1))))
       )))
    
