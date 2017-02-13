@@ -72,8 +72,22 @@ public class StarwispLinearLayout
                                                    weight);
             }
             lp.gravity=BuildLayoutGravity(arr.getString(4));
-            int margin=arr.getInt(5);
-            lp.setMargins(margin,margin,margin,margin);
+	    
+	    Object marginObj = arr.get(5);
+	    if(marginObj instanceof Integer){
+		Integer margin = (Integer)marginObj;
+		lp.setMargins(margin,margin,margin,margin);
+	    } else {
+		if(marginObj instanceof JSONArray){
+		    JSONArray margin = (JSONArray)marginObj;
+		    lp.setMargins(margin.getInt(0),
+				  margin.getInt(1),
+				  margin.getInt(2),
+				  margin.getInt(3));
+		} else {
+		    Log.e("starwisp", "Linearlayout margin is incomprehensible");
+		}
+	    }
             return lp;
         } catch (JSONException e) {
             Log.e("starwisp", "Error parsing data " + e.toString());

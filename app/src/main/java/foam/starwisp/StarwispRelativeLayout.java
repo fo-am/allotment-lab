@@ -110,7 +110,6 @@ public class StarwispRelativeLayout
             v.setId(arr.getInt(1));
             v.setLayoutParams(BuildRelativeLayoutParams(arr.getJSONArray(2)));
             v.setPadding(2,2,2,2);
-            Log.i("starwisp","SETTING BG COLOUR");
             JSONArray col = arr.getJSONArray(3);
             v.setBackgroundColor(Color.argb(col.getInt(3), col.getInt(0), col.getInt(1), col.getInt(2)));
             parent.addView(v);
@@ -133,7 +132,6 @@ public class StarwispRelativeLayout
                 }
             }
             if (token.equals("contents-add")) {
-                Log.i("starwisp","adding to relative layout...");
                 JSONArray children = arr.getJSONArray(3);
                 for (int i=0; i<children.length(); i++) {
                     b.Build(ctx,ctxname,new JSONArray(children.getString(i)), v);

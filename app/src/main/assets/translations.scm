@@ -121,9 +121,9 @@
 
    (list 'compost-1 (list "Is your compost wet, slimy or strong smelling?"))
    (list 'compost-2 (list "Is your compost dry or fibrous with little rotting?"))
-   (list 'compost-3 (list "Is your compost dry or fibrous with little rotting throughout?"))
-   (list 'compost-4 (list "Is your compost dry or fibrous with little rotting around the edges, but otherwise Ok?"))
-   (list 'compost-5 (list "Is your compost dry or fibrous with little rotting on the top, but otherwise Ok?"))
+   (list 'compost-3 (list "Is your compost dry or fibrous with little rotting all the way though?"))
+   (list 'compost-4 (list "Is your compost dry or fibrous with little rotting around the edges, but otherwise ok?"))
+   (list 'compost-5 (list "Is your compost dry or fibrous with little rotting on the top, but otherwise ok?"))
    (list 'compost-6 (list "Do you have a problem with flies or rats?"))
    
    (list 'rats (list "Rats"))

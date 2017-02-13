@@ -76,6 +76,8 @@ public class StarwispActivity extends FragmentActivity
         String json = m_Scheme.eval("(activity-callback 'on-create \""+m_Name+"\" (list \""+arg+"\"))");
         View root = findViewById(R.id.main);
 
+	root.setPadding(0,0,0,0);
+
         m_Typeface = Typeface.createFromAsset(getAssets(), "fonts/starwisp.ttf");
         //m_Typeface = Typeface.createFromAsset(getAssets(), "fonts/grstylus.ttf");
 

@@ -79,7 +79,7 @@
 (define (vert-colour col . l)
   (linear-layout
    0 'vertical
-   (layout 'fill-parent 'wrap-content 1 'centre 5)
+   (layout 'fill-parent 'wrap-content 1 'centre margin-size)
    col
    l))
 
@@ -125,7 +125,7 @@
 (define (mtext id)
   (text-view (symbol->id id)
              (mtext-lookup id)
-             normal-text-size (layout 'wrap-content 'wrap-content -1 'centre 0)))
+             normal-text-size (layout 'wrap-content 'wrap-content -1 'centre margin-size)))
 
 (define (mtext-margin id margin)
   (text-view (symbol->id id)
@@ -136,7 +136,7 @@
 (define (mtext-fixed w id)
   (text-view (symbol->id id)
              (mtext-lookup id)
-             normal-text-size (layout w 'wrap-content -1 'centre 0)))
+             normal-text-size (layout w 'wrap-content -1 'centre margin-size)))
 
 (define (mtext-small id)
   (text-view (symbol->id id)
@@ -151,12 +151,12 @@
 (define (mtitle id)
   (text-view (symbol->id id)
              (mtext-lookup id)
-             large-text-size (layout 'fill-parent 'wrap-content -1 'centre 5)))
+             large-text-size (layout 'fill-parent 'wrap-content -1 'centre margin-size)))
 
 (define (mtitle-scale id)
   (text-view (symbol->id id)
              (mtext-lookup id)
-             large-text-size (layout 'fill-parent 'wrap-content 1 'centre 5)))
+             large-text-size (layout 'fill-parent 'wrap-content 1 'centre margin-size)))
 
 (define (medit-text id type fn)
   (linear-layout

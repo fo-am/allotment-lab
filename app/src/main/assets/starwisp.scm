@@ -27,12 +27,21 @@
 (define compost-image-height 300)
 
 (define (infotext id)
-  (vert-colour 
-   info-col
-   (text-view (symbol->id id)
-	      (mtext-lookup id)
-	      large-text-size 
-	      (layout 'wrap-content 'wrap-content -1 'centre 20))))
+  (linear-layout
+   0 'vertical
+   (layout 'fill-parent 'wrap-content -1 'centre 0)
+   '(0 0 0 0)
+   (list
+    (vert-colour 
+     info-col
+     (text-view (symbol->id id)
+		(mtext-lookup id)
+		large-text-size 
+		(layout 'wrap-content 'wrap-content -1 'centre 20)))
+    (image-view 0 "speech" (layout 'fill-parent 'wrap-content -1 'centre 0))
+    (image-view (make-id "robin") "robin_1" 
+		(layout 200 'wrap-content 1 'right 
+			'(0 -80 0 0))))))
 
 (define (quick-fragment name widgets)
   (fragment
@@ -54,7 +63,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-1)
-     (image-view (make-id "soil-pic") "soil_1" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_1" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'easily (lambda () (list (replace-fragment (get-id "soil-container") "soil-3"))))
     (mbutton 'great-care (lambda () (list (replace-fragment (get-id "soil-container") "soil-2"))))
     (mbutton 'no (lambda () 
@@ -67,7 +76,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-2)
-     (image-view (make-id "soil-pic") "soil_2" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_2" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'flattens (lambda () (list (replace-fragment (get-id "soil-container") "soil-3"))))
     (mbutton 'breaks (lambda () 
 		       (set-current! 'soil-result "Sandy loam")
@@ -79,7 +88,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-3)
-     (image-view (make-id "soil-pic") "soil_3" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_3" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'yes (lambda () (list (replace-fragment (get-id "soil-container") "soil-4"))))
     (mbutton 'no (lambda ()
 		   (set-current! 'soil-result "Loamy sand")
@@ -91,7 +100,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-4)
-     (image-view (make-id "soil-pic") "soil_4" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_4" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'yes (lambda () (list (replace-fragment (get-id "soil-container") "soil-6"))))
     (mbutton 'no (lambda () (list (replace-fragment (get-id "soil-container") "soil-5"))))))
   
@@ -101,7 +110,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-5)
-     (image-view (make-id "soil-pic") "soil_5" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_5" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'smooth (lambda () 
 		       (set-current! 'soil-result "Silty loam")
 		       (list (replace-fragment (get-id "soil-container") "soil-end")))) 
@@ -115,7 +124,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-6)
-     (image-view (make-id "soil-pic") "soil_6" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_6" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'yes (lambda () (list (replace-fragment (get-id "soil-container") "soil-8"))))
     (mbutton 'no (lambda ()  (list (replace-fragment (get-id "soil-container") "soil-7"))))))
 
@@ -125,7 +134,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-7)
-     (image-view (make-id "soil-pic") "soil_7" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_7" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'gritty (lambda ()
 		       (set-current! 'soil-result "Sandy clay loam")
 		       (list (replace-fragment (get-id "soil-container") "soil-end")))) 
@@ -142,7 +151,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-8)
-     (image-view (make-id "soil-pic") "soil_8" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_8" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'polish-yes (lambda () (list (replace-fragment (get-id "soil-container") "soil-9"))))
     (mbutton 'polish-gritty (lambda ()
 			      (set-current! 'soil-result "Sandy clay")
@@ -154,7 +163,7 @@
     (vert-colour 
      info-col
      (mtitle 'soil-9)
-     (image-view (make-id "soil-pic") "soil_9" (layout 'fill-parent 'wrap-contant -1 'centre 0)))
+     (image-view (make-id "soil-pic") "soil_9" (layout 'fill-parent 'wrap-content -1 'centre 0)))
     (mbutton 'very-strongly (lambda () 
 			      (set-current! 'soil-result "Clay")
 			      (list (replace-fragment (get-id "soil-container") "soil-end")))) 
@@ -210,8 +219,7 @@
     (vert-colour 
      info-col
      (mtitle 'compost-2)
-     ;;(image-view (make-id "compost-pic") "compost_2" (layout 'fill-parent 'wrap-contant -1 'centre 0))
-     )
+     (image-view (make-id "compost-pic") "compost_3" (layout 'fill-parent compost-image-height -1 'centre 0)))
     (mbutton 'yes (lambda () (list (replace-fragment (get-id "compost-container") "compost-3")))) 
     (mbutton 'no (lambda () (list (replace-fragment (get-id "compost-container") "compost-6"))))))
 
@@ -313,6 +321,19 @@
 
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define (choose l)
+  (list-ref l (random (length l))))
+
+(define (anim-timer-cb)
+  (list
+   (update-widget 'image-view (get-id "robin") 'image (choose (list "robin_0" "robin_1" "robin_2")))   
+   (delayed "anim-timer" (choose (list 3000 (+ 100 (random 50)))) anim-timer-cb)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (define-activity-list
 
   (activity
@@ -324,7 +345,7 @@
       (mtitle 'splash-title)
       (mtext-margin 'splash-text 20)
       (mtext-margin 'splash-blurb 20)
-      (image-view (make-id "splash") "logo" (layout 'fill-parent 'wrap-contant -1 'centre 0))
+      (image-view (make-id "splash") "logo" (layout 'fill-parent 'wrap-content -1 'centre 0))
       (mbutton 'splash-start (lambda () (list (start-activity "main" 0 ""))))
       (mtext-margin 'splash-discl 20)
       )
@@ -348,7 +369,7 @@
      (vert
       (mtitle 'title)
       ;; image
-      (image-view (make-id "map") "map" (layout 'fill-parent 'wrap-contant -1 'centre 0))
+      (image-view (make-id "map") "map" (layout 'fill-parent 'wrap-content -1 'centre 0))
       
       (horiz
        (vert
@@ -366,7 +387,7 @@
 	(mbutton 'rainfall-but (lambda () '()))))
       
       (mbutton 'compost-lab (lambda () (list (start-activity "fieldcalc" 0 ""))))
-      
+
       (mtext 'recommended-crops)
       (infotext 'recommended-crops-text)
       (mtext 'todo)
@@ -380,6 +401,7 @@
       (update-widget 'button (get-id "units-but") 'disabled 1)
       (update-widget 'button (get-id "rainfall-but") 'disabled 1)
       (update-widget 'button (get-id "soil-texture-but") 'text (get-current 'soil-result "Find soil texture"))
+      (delayed "anim-timer" (+ 100 (random 50)) anim-timer-cb)
       ))
    (lambda (activity) '())
    (lambda (activity) '())
