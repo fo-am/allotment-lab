@@ -18,6 +18,7 @@
 (define i18n-text
   (list))
 
+(define massive-text-size 40)
 (define large-text-size 30)
 (define button-text-size 30)
 (define normal-text-size 20)
@@ -151,7 +152,7 @@
 (define (mtitle id)
   (text-view (symbol->id id)
              (mtext-lookup id)
-             large-text-size (layout 'fill-parent 'wrap-content -1 'centre margin-size)))
+             massive-text-size (layout 'fill-parent 'wrap-content -1 'centre margin-size)))
 
 (define (mtitle-scale id)
   (text-view (symbol->id id)

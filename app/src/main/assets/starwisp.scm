@@ -48,8 +48,8 @@
 		(layout 'wrap-content 'wrap-content -1 'centre 20)))
     (image-view 0 "speech" (layout 'fill-parent 'wrap-content -1 'centre 0))
     (image-view (make-id "robin") "robin_1" 
-		(layout 200 'wrap-content 1 'right 
-			'(0 -80 0 0))))))
+		(layout 130 'wrap-content 1 'right 
+			'(0 -60 0 0))))))
 
 (define (infotext-forg id)
   (linear-layout
@@ -65,8 +65,8 @@
 		(layout 'wrap-content 'wrap-content -1 'centre 20)))
     (image-view 0 "speech2" (layout 'fill-parent 'wrap-content -1 'centre 0))
     (image-view (make-id "forg") "forg_0" 
-		(layout 200 'wrap-content 1 'left 
-			'(0 -80 0 0))))))
+		(layout 170 'wrap-content 1 'left 
+			'(0 -60 0 0))))))
 
 (define (quick-fragment name widgets)
   (fragment
@@ -354,7 +354,7 @@
 (define (anim-timer-cb)
   (list
    (update-widget 'image-view (get-id "robin") 'image (choose (list "robin_0" "robin_1" "robin_2")))   
-   (delayed "anim-timer" (choose (list 3000 (+ 100 (random 50)))) anim-timer-cb)))
+   (delayed "anim-timer" (choose (list 3000 (+ 300 (random 100)))) anim-timer-cb)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -467,13 +467,13 @@
       (mtitle 'compost-title)
       (mtext-margin 'compost-text 20)
       (mbutton 'new-bin (lambda () '()))
-      (image-view (make-id "forg") "forg_0" 
-		  (layout 200 'wrap-content 1 'left 
-			  '(0 -80 0 0)))
       (spacer 10)
       (mbutton 'left-bin (lambda () (list (start-activity "newfield" 1 ""))))
       (mbutton 'middle-bin (lambda () (list (start-activity "newfield" 1 ""))))
       (mbutton 'right-bin (lambda () (list (start-activity "newfield" 1 ""))))
+      (image-view (make-id "forg") "forg_0" 
+		  (layout 170 'wrap-content 1 'left 
+			  '(0 -60 0 0)))
       (mtext 'compost-tips)
       (mbutton 'compost-troubleshooting (lambda () (list (start-activity "fieldhistory" 1 ""))))
       (mbutton 'compost-type (lambda () '()))
@@ -482,8 +482,8 @@
       (mbutton 'compost-using (lambda () '()))
       (spacer 10)
       (image-view (make-id "robin") "robin_1" 
-		  (layout 200 'wrap-content 1 'right 
-			  '(0 -80 0 0)))
+		  (layout 130 'wrap-content 1 'right 
+			  '(0 -60 0 0)))
       (mbutton 'back (lambda () (list (finish-activity 1))))
       
       )))
@@ -492,6 +492,7 @@
      (activity-layout activity))
    (lambda (activity arg)
      (list
+      (delayed "anim-timer" (+ 100 (random 50)) anim-timer-cb)
       (update-widget 'button (get-id "new-bin") 'disabled 1)
       (update-widget 'button (get-id "middle-bin") 'disabled 1)
       (update-widget 'button (get-id "right-bin") 'disabled 1)
