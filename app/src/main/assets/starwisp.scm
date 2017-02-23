@@ -48,7 +48,7 @@
 		(layout 'wrap-content 'wrap-content -1 'centre 20)))
     (image-view 0 "speech" (layout 'fill-parent 'wrap-content -1 'centre 0))
     (image-view (make-id "robin") "robin_1" 
-		(layout 130 'wrap-content 1 'right 
+		(layout 120 'wrap-content 1 'right 
 			'(0 -60 0 0))))))
 
 (define (infotext-forg id)
@@ -351,11 +351,64 @@
 (define (choose l)
   (list-ref l (random (length l))))
 
+(define (forg-state->frame state)
+  (cond
+   ((eqv? state 0) "forg_0")
+   ((eqv? state 1) "forg_0")
+   ((eqv? state 2) "forg_0")
+   ((eqv? state 3) "forg_0")
+   ((eqv? state 4) "forg_1")
+   ((eqv? state 5) "forg_1")
+   ((eqv? state 6) "forg_1")
+   ((eqv? state 7) "forg_1")
+   ((eqv? state 8) "forg_t0")
+   ((eqv? state 9) "forg_t1")
+   ((eqv? state 10) "forg_t2")
+   ((eqv? state 11) "forg_t1")
+   (else "forg_t0")))
+
+(define (next-forg state)
+  (cond
+   ((eqv? state 7) (if (< (random 100) 10) 8 0))
+   ((eqv? state 12) 0)
+   (else (+ state 1))))
+
+(define forg-state 0)
+
+(define (next-forg-frame)
+  (set! forg-state (next-forg forg-state))
+  (forg-state->frame forg-state))
+
+;;-------------
+
+(define (robin-state->frame state)
+  (cond
+   ((eqv? state 0) "robin_2")
+   ((eqv? state 1) "robin_1")
+   ((eqv? state 2) "robin_2")
+   ((eqv? state 3) "robin_1")
+   ((eqv? state 4) "robin_2")
+   ((eqv? state 5) "robin_1")
+   ((eqv? state 6) "robin_2")
+   (else "robin_1")))
+
+(define (next-robin state)
+  (cond
+   ((eqv? state 0) (if (< (random 100) 2) 1 0))
+   ((eqv? state 7) 0)
+   (else (+ state 1))))
+  
+(define robin-state 0)
+
+(define (next-robin-frame)
+  (set! robin-state (next-robin robin-state))
+  (robin-state->frame robin-state))
+
 (define (anim-timer-cb)
   (list
-   (update-widget 'image-view (get-id "robin") 'image (choose (list "robin_0" "robin_1" "robin_2")))   
-   (delayed "anim-timer" (choose (list 3000 (+ 300 (random 100)))) anim-timer-cb)))
-
+   (update-widget 'image-view (get-id "robin") 'image (next-robin-frame))   
+   (update-widget 'image-view (get-id "forg") 'image (next-forg-frame))   
+   (delayed "anim-timer" 75 anim-timer-cb)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -482,7 +535,7 @@
       (mbutton 'compost-using (lambda () '()))
       (spacer 10)
       (image-view (make-id "robin") "robin_1" 
-		  (layout 130 'wrap-content 1 'right 
+		  (layout 120 'wrap-content 1 'right 
 			  '(0 -60 0 0)))
       (mbutton 'back (lambda () (list (finish-activity 1))))
       
@@ -528,8 +581,7 @@
    (lambda (activity arg)
      (activity-layout activity))
    (lambda (activity arg)
-     (list
-      ))
+     (anim-timer-cb))
    (lambda (activity) '())
    (lambda (activity) '())
    (lambda (activity) '())
